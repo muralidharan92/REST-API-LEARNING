@@ -1,8 +1,10 @@
 """Module providing dataclasses, flask modules, utils methods"""
 
+import dataclasses
 from utils import get_users_visited_count
 
 
+@dataclasses.dataclass
 class Visit:
     """This class has count action for api hit"""
 

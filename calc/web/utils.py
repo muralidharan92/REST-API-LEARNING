@@ -95,18 +95,6 @@ def success_response():
     return return_json
 
 
-# def get_users_visited_count():
-#     """Get the count of the visit api
-
-#     Returns:
-#         int: Return count of the visit api
-#     """
-#     prev_user_visited_count = user_visit.find({})[0]["users_visited_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one({}, {"$set": {"users_visited_count": new_user_visited_count}})
-#     return user_visit.find({})[0]["users_visited_count"]
-
-
 def get_users_visited_count():
     """Get the count of the visit api
 
@@ -119,21 +107,6 @@ def get_users_visited_count():
     return user_visit.find_one({})["users_visited_count"]
 
 
-# def get_users_visited_add_count():
-#     """Get the count of the visit add api
-
-
-#     Returns:
-#         int: Return count of the visit add api
-#     """
-#     prev_doc = user_visit.find({})[0]
-#     prev_user_visited_count = prev_doc["users_visited_add_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one(
-#         {"_id": prev_doc["_id"]},
-#         {"$set": {"users_visited_add_count": new_user_visited_count}},
-#     )
-#     return user_visit.find({})[0]["users_visited_add_count"]
 def get_users_visited_add_count():
     """Get the count of the visit add api
 
@@ -150,21 +123,6 @@ def get_users_visited_add_count():
     return user_visit.find_one({})["users_visited_add_count"]
 
 
-# def get_users_visited_sub_count():
-#     """Get the count of the visit sub api
-
-
-#     Returns:
-#         int: Return count of the visit sub api
-#     """
-#     prev_doc = user_visit.find({})[0]
-#     prev_user_visited_count = prev_doc["users_visited_sub_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one(
-#         {"_id": prev_doc["_id"]},
-#         {"$set": {"users_visited_sub_count": new_user_visited_count}},
-#     )
-#     return user_visit.find({})[0]["users_visited_sub_count"]
 def get_users_visited_sub_count():
     """Get the count of the visit sub api
 
@@ -227,51 +185,3 @@ def get_users_visited_mod_count():
         {"$set": {"users_visited_mod_count": new_user_visited_count}},
     )
     return new_user_visited_count
-
-
-# def get_users_visited_mul_count():
-#     """Get the count of the visit mul api
-
-#     Returns:
-#         int: Return count of the visit mul api
-#     """
-#     prev_doc = user_visit.find({})[0]
-#     prev_user_visited_count = prev_doc["users_visited_mul_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one(
-#         {"_id": prev_doc["_id"]},
-#         {"$set": {"users_visited_mul_count": new_user_visited_count}},
-#     )
-#     return user_visit.find({})[0]["users_visited_mul_count"]
-
-
-# def get_users_visited_div_count():
-#     """Get the count of the visit div api
-
-#     Returns:
-#         int: Return count of the visit div api
-#     """
-#     prev_doc = user_visit.find({})[0]
-#     prev_user_visited_count = prev_doc["users_visited_div_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one(
-#         {"_id": prev_doc["_id"]},
-#         {"$set": {"users_visited_div_count": new_user_visited_count}},
-#     )
-#     return user_visit.find({})[0]["users_visited_div_count"]
-
-
-# def get_users_visited_mod_count():
-#     """Get the count of the visit mod api
-
-#     Returns:
-#         int: Return count of the visit mod api
-#     """
-#     prev_doc = user_visit.find({})[0]
-#     prev_user_visited_count = prev_doc["users_visited_mod_count"]
-#     new_user_visited_count = prev_user_visited_count + 1
-#     user_visit.update_one(
-#         {"_id": prev_doc["_id"]},
-#         {"$set": {"users_visited_mod_count": new_user_visited_count}},
-#     )
-#     return user_visit.find({})[0]["users_visited_mod_count"]

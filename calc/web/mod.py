@@ -15,9 +15,7 @@ class Mod:
         Returns:
             Response: This will send response as dict of message and status code
         """
-        # Step1: Get the payload from the request
         payload = request.get_json()
-        # Step1.1: Verify validity of payload
         result = check_payload_data(payload, "mod")
         if result["status code"] != 200:
             return jsonify(result)
