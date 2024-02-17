@@ -1,0 +1,5 @@
+.vscode
+.venv
+calc/db/sample.py
+.DS_Store
+**/**/__pycache__
