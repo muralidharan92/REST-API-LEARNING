@@ -7,7 +7,7 @@ from mul import Mul
 from div import Div
 from mod import Mod
 from visit import Visit
-from utils import get_users_visited_count
+from utils import get_users_visited_count, reset_all_visited_count
 
 app = Flask(__name__)
 
@@ -52,6 +52,12 @@ def calc_div():
 def calc_mod():
     """This method will handle mod api request"""
     return Mod().post()
+
+
+@app.route("/calc/2/reset/all", methods=["PUT"])
+def calc_reset_all_count():
+    """This method will handle to reset all count api value"""
+    return reset_all_visited_count()
 
 
 if __name__ == "__main__":

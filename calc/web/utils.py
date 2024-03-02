@@ -1,5 +1,6 @@
 """Module providing a pymongo action methods."""
 
+from flask import jsonify
 from pymongo import MongoClient
 
 client = MongoClient("mongodb://db:27017")
@@ -185,3 +186,23 @@ def get_users_visited_mod_count():
         {"$set": {"users_visited_mod_count": new_user_visited_count}},
     )
     return new_user_visited_count
+
+
+def reset_all_visited_count():
+    """This method will reset all visited count in all the modules"""
+    prev_doc = user_visit.find_one({})
+    user_visit.update_one(
+        {"_id": prev_doc["_id"]},
+        {
+            "$set": {
+                "users_visited_count": 0,
+                "users_visited_add_count": 0,
+                "users_visited_sub_count": 0,
+                "users_visited_mul_count": 0,
+                "users_visited_div_count": 0,
+                "users_visited_mod_count": 0,
+            }
+        },
+    )
+    return_json = {"message": "All the counts were reset to 0", "status code": 200}
+    return jsonify(return_json)
